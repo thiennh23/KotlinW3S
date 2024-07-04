@@ -1,7 +1,204 @@
 fun main() {
+
+    //Use "open" keyword to mark this class can be inherited
+    //Parent/SuperClass
+    open class MyParentClass() {
+        val x = 5
+    }
+
+    //Use a "colon" sign to mark this class is subclass, inherited from another class
+    //Child/SubClass
+    class MyChildClass : MyParentClass() {
+        fun ChildFunc() {
+            println(x)
+        }
+    }
+
+    val myObj = MyChildClass()
+    myObj.ChildFunc()
+
+    println('a')
+
+
+
+   /* var a = cars() //create "a" object of "cars" class
+    //Access "cars" properties and add values to it
+    a.brand = "BMW"
+    a.model = "X6 (E71)"
+    a.year = 2008
+
+    var c1 = cars()
+    c1.brand = "Ford"
+    c1.model = "Mustang"
+    c1.year = 1969
+
+    println(a.brand)
+    println(a.model)
+    println(a.year)
+    println(c1.brand)
+    println(c1.model)
+    println(c1.year)*/
+
+    //Constructor
+//    class car(var brand:String, var model:String, var year:Int)
+    /*class car(var brand:String, var model:String, var year:Int){
+
+        fun drive() {
+            println("Wroooom!")
+        }
+
+        fun speed(sp: Int) {
+            println("Speed: $sp km/h")
+        }
+
+        fun printOut() {
+            println(brand)
+            println(model)
+            println(year)
+        }
+    }
+
+
+    val c1 = car("Ford", "Mustang", 1969)
+    val c2 = car("BMW", "X5", 1999)
+    val c3 = car("Tesla", "Model S", 2020)
+
+    c1.printOut()
+    c1.speed(200)
+    c1.drive()
+
+    c2.printOut()
+    c2.drive()
+
+    c3.printOut()
+    c3.drive()*/
+
+    /*println(c1.brand)
+    println(c1.model)
+    println(c1.year)
+
+    println(c2.brand)
+    println(c2.model)
+    println(c2.year)*/
+
+
+
     //intro()
     //string()
-    condition()
+    //condition()
+    //condition2()
+    //whenCondition()
+    //whenCondition2()
+    //loops()
+    //loop2()
+    //breakStatement()
+    //continueStatement()
+    //arrayKotlin()
+}
+
+fun arrayKotlin() {
+    //To create a Array, we use keyword: arrayOf()
+    var cars = arrayOf("Volvo", "BMW", "Ford", "Toyota", "Mazda")
+    println(cars.size)
+    println(cars[0])
+    cars[0] = "Honda"
+    println(cars[0])
+    println(cars[0].length)
+
+    //Check if an element inside array
+    if ("BMW" in cars)
+        println("BMW inside cars array")
+    else println("BMW is not inside cars array")
+
+    //Loop through array
+    for (i in cars)
+        println(i)
+    //i: the value of cars[0], cars[1], ....
+    //i: not the count value like: 0, 1, 2, 3
+}
+
+//The continue statement breaks one iteration (in the loop)
+// If a specified condition occurs, and continues with the next iteration in the loop.
+fun continueStatement() {
+    var i = 0
+    while (i < 10) {
+
+        //Skip if i is odd
+        if (i % 2 != 0) {
+            i++
+           continue
+       }
+
+        //The main process of while loop
+        println(i)
+        i++
+
+    }
+}
+
+fun breakStatement() {
+
+    var i: Int = 1
+    while (i <= 100) {
+        println(i)
+        i++
+        if (i % 3 == 0) break
+    }
+
+}
+
+fun loop2() {
+    var i = 0
+    do {
+        println(i)
+        i++
+    }
+        while (i < 5)
+}
+
+fun loops(){
+    var i: Int = 0
+    while (i < 5){
+        println(i)
+        i++
+    }
+}
+
+fun whenCondition2() {
+    val x = 4
+    var y: String = when(x){
+        1 -> "1"
+        2 -> "2"
+        3 -> "3"
+        else -> "not 1 2 3"
+    }
+    println(y)
+}
+
+fun whenCondition(){
+    val x = 4
+    //When condition similar to Switch-Case
+
+    when (x) {
+        1 -> println("x == 1")
+        2 -> println("x == 2")
+        3 -> println("x == 3")
+        else ->{
+            println("x is neither 1 nor 2")
+            println("x is neither 1 nor 3")
+            println("x is neither 2 nor 3")
+        }
+    }
+}
+
+fun condition2(){
+    var a = 18;
+    val b = if (a < 20){
+        "Good Morning"
+    } else {
+        "Good Afternoon"
+    }
+    println(b)
 }
 
 fun condition() {
