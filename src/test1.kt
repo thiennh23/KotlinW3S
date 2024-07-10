@@ -1,11 +1,9 @@
-import javax.lang.model.element.Name
-
 fun main() {
 
 }
 
-class SmartTvDevice(deviceName: String, deviceCategory: String, StatusCode: Int) :
-    SmartDevice(name = deviceName, category = deviceCategory) {
+class smartTV(deviceName: String, deviceCategory: String, StatusCode: Int) :
+    smarttv(name = deviceName, category = deviceCategory) {
 
     var speakerVolume = 2
         set(value) {
@@ -22,7 +20,7 @@ class SmartTvDevice(deviceName: String, deviceCategory: String, StatusCode: Int)
         }
 }
 
-open class SmartDevice(name: String, category: String) {
+open class smarttv(name: String, category: String) {
     var deviceStatus = "online"
 
     constructor(name: String, category: String, statusCode: Int) : this(name, category) {
