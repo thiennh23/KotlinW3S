@@ -22,7 +22,24 @@ fun main() {
     device2.turnOn()
     device2.turnOff()
     println(device2.type)
+   /* println(device)*/
+
+    var car1 = Car()
+    car1.year = 2004
+    println(car1.year)
+    //Can not access because it is private
+    //car1.brand = "TOYOTA"
+    //println(car1.brand)
 }
+
+
+open class Car() {
+    private var brand = ""
+    protected var model = ""
+    public var year = 0
+}
+
+
 
 // The SmartHome class HAS-A smart TV device.
 class SmartHome(
@@ -31,10 +48,12 @@ class SmartHome(
 ) {
 
     fun turnOn() {
+        deviceTurnOnCount++
         smartTV.turnOn()
     }
 
     fun turnOff() {
+        deviceTurnOnCount--
         smartTV.turnOff()
     }
 
@@ -45,6 +64,10 @@ class SmartHome(
     fun increaseSpeakerVolume() {
         smartLight.increaseBrightness()
     }
+
+    var deviceTurnOnCount = 0
+        private set
+
 }
 
 open class SmartDevice(val name: String, val category: String) {
@@ -98,6 +121,7 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) : SmartDevice(na
     //Overried
     override fun turnOn() {
         super.turnOn()
+
         println(
             "$name is turned on. Speaker volume is set to $volume and channel number is " +
                     "set to $channelNumber."
