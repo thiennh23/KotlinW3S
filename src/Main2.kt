@@ -14,6 +14,8 @@ fun main() {
     televison.increaseSpeakerVolume()
     televison.increaseSpeakerVolume()
 
+
+
 }
 
 open class SmartDevice(val name: String, val category: String) {
@@ -65,6 +67,7 @@ class SmartTvDevice(deviceName: String, deviceCategory: String) : SmartDevice(na
 class SmartLightDevice(deviceName: String, deviceCategory: String): SmartDevice(name = deviceName, category = deviceCategory) {
 
     var brightnessLevel = 0
+        get() = field
         set(value) {
             if (value in 0..100)
                 field = value
