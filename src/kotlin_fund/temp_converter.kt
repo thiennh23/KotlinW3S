@@ -4,7 +4,7 @@ fun main() {
     // Fill in the code.
 
     fun FtoK(first: Double): Double {
-        return 5/9*(first - 32) + 273.15
+        return 5.0/9.0*(first - 32) + 273.15
     }
 
     fun KtoC(first: Double): Double {
@@ -12,11 +12,13 @@ fun main() {
     }
 
     fun CtoF(first: Double): (Double) -> Double = {
-        (9/5)*it + 32;
+        (9.0/5.0)*it + 32;
     }
 
 
-    printFinalTemperature(27.0, "Celsius", "Fahrenheit", {(9/5)*it + 32;})
+    printFinalTemperature(27.0, "Celsius", "Fahrenheit", CtoF(27.0))
+    printFinalTemperature(350.0, "Kelvin", "Celsius"){KtoC(350.0)}
+    printFinalTemperature(10.0, "Fahrenheit", "Kelvin") { FtoK(10.0)}
 
     /*27.0 degrees Celsius is 80.60 degrees Fahrenheit.
     350.0 degrees Kelvin is 76.85 degrees Celsius.
